@@ -52,28 +52,32 @@ import {ProductService} from "./product.service";
     FormsModule,
     NgbModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: 'products', component: ProductsComponent },
-      { path: 'shopping-cart', component: ShoppingCartComponent },
-      { path: 'login', component: LoginComponent },
+      {path: '', component: ProductsComponent, pathMatch: 'full'},
+      {path: 'products', component: ProductsComponent},
+      {path: 'shopping-cart', component: ShoppingCartComponent},
+      {path: 'login', component: LoginComponent},
 
-      { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
-      { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard] },
-      { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
+      {path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard]},
+      {path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard]},
+      {path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard]},
 
-      { path: 'admin/products/new',
+      {
+        path: 'admin/products/new',
         component: ProductFormComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
       },
-      { path: 'admin/products/:id',
+      {
+        path: 'admin/products/:id',
         component: ProductFormComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
       },
-      { path: 'admin/products',
+      {
+        path: 'admin/products',
         component: AdminProductsComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
       },
-      { path: 'admin/orders',
+      {
+        path: 'admin/orders',
         component: AdminOrdersComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
       },
